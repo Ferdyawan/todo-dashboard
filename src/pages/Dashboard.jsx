@@ -4,6 +4,7 @@ import { fetchTodos, addTodo } from "../features/todos/todosThunks";
 import ThemeToggle from "../components/ThemeToggle";
 import TodoItem from "../components/TodoItem";
 import Todo from "../assets/Todo.png";
+import Clipboard from "../assets/Clipboard.png";
 
 export default function Dashboard() {
   const dispatch = useDispatch();
@@ -98,9 +99,14 @@ export default function Dashboard() {
 
             <div className="mb-4">
                 {incomplete.length === 0 && (
-                <p className="text-center text-xs text-gray-500 dark:text-gray-400">
-                    Belum ada tugas
-                </p>
+                <div className="flex flex-col items-center justify-center text-center pt-10">
+                    <img src={Clipboard} alt="Clipboard" className="mb-4" />
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <strong>Belum ada tugas untuk saat ini</strong>
+                        <br />
+                        Silahkan tambah tugas baru pada form di atas.
+                    </p>
+                </div>
                 )}
                 {incomplete.map((todo) => (
                 <TodoItem key={todo.id} todo={todo} />
