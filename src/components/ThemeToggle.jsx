@@ -1,4 +1,6 @@
-export default function ThemeToggle({ dark, setDark }) {
+import React from "react";
+
+const ThemeToggle = ({ dark, setDark }) => {
   return (
     <button
       onClick={() => setDark(!dark)}
@@ -7,4 +9,6 @@ export default function ThemeToggle({ dark, setDark }) {
       {dark ? "Light Mode" : "Dark Mode"}
     </button>
   );
-}
+};
+
+export default React.memo(ThemeToggle);

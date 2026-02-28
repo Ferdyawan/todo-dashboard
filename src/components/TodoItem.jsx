@@ -1,8 +1,9 @@
+import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo, toggleTodo } from "../features/todos/todosThunks";
 import { Trash2 } from "lucide-react";
 
-export default function TodoItem({ todo }) {
+const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
 
   return (
@@ -32,4 +33,6 @@ export default function TodoItem({ todo }) {
       </button>
     </div>
   );
-}
+};
+
+export default React.memo(TodoItem);
